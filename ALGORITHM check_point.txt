@@ -1,0 +1,34 @@
+ALGORITHM check_point
+VAR
+c:CHAR
+sent:STRING
+i,l,nw,nv:INTEGER
+BEGIN
+l:=0
+write("donner un caractére")
+read(c)
+WHILE (c<>".") DO
+    sent:=sent+c
+    l:=l+1
+    write("donner un caractére")
+    read(c)
+END_WHILE
+i:=1
+nw:=0
+nv:=0
+WHILE (i<=l) DO
+    IF (sous_chaine(sent,i,1)=" ") THEN
+        nw:=1
+    END_IF
+    IF ((sous_chaine(sent,i,1)="a")
+     or (sous_chaine(sent,i,1)="e")
+     or (sous_chaine(sent,i,1)="i")
+     or (sous_chaine(sent,i,1)="o")
+     or (sous_chaine(sent,i,1)="u")) THEN
+    nv:=nv+1
+    END_IF
+    write("The length of the sentence is :",l)
+    write("he number of words in the sentence is :",nw)
+    write("The number of vowels in the sentence is :",nv)
+END_WHILE
+END
